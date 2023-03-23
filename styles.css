@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap");
+
+:root {
+  --black-color: #414141;
+  --black-light-color: #414141;
+  --gray-color: #b7b7b7;
+  --gray-light-color: #e2e2e2;
+  --white-color: #ffffff;
+  --orange-color: #e36900;
+  --inactive-gray-color: #707070;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+article {
+  padding: 10px;
+}
+
+section.gallery_wrapper {
+  display: grid;
+  grid-template-columns: 40vw 1fr;
+  column-gap: 20px;
+}
+
+div.photos_property a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+div.photos_property a span {
+  color: var(--inactive-gray-color);
+  font-weight: 500;
+}
+
+div.photos_property a img {
+  height: 34px;
+  width: 34px;
+  transform: rotate(90deg);
+}
+
+div.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60vh 20vh;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+div.gallery img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+div.photo_active {
+  position: relative;
+}
+
+div.photo_active label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  box-shadow: 0px 3px 12px #65656545;
+  border-radius: 6px;
+  height: 30px;
+  width: 160px;
+  background: white;
+}
+
+div.photo_active label img {
+  width: 28px;
+  height: 28px;
+}
+
+div.photo_active label span {
+  font-size: 12px;
+  color: var(--inactive-gray-color);
+  font-weight: 500;
+}
+
+div.list_photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  position: relative;
+}
+
+div.list_photos button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  box-shadow: 0px 3px 12px #65656545;
+  border-radius: 6px;
+  height: 40px;
+  width: 210px;
+  background: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+div.list_photos button:active {
+  transform: scale(0.98);
+}
+
+div.list_photos button img {
+  width: 28px;
+  height: 28px;
+  transform: rotate(-90deg);
+}
+
+div.list_photos button span {
+  font-size: 14px;
+  color: var(--inactive-gray-color);
+  font-weight: 500;
+}
+
+div.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+div.header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 5px;
+}
+
+div.name {
+  align-items: flex-start;
+}
+
+div.price {
+  align-items: flex-end;
+}
+
+/* div.info_property {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+} */
+
+div.header h3 {
+  font-weight: bold;
+  color: var(--black-color);
+}
+
+div.header p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+div.name h3 {
+  font-size: 24px;
+}
+
+div.name p {
+  color: var(--inactive-gray-color);
+}
+
+div.price h3 {
+  font-size: 20px;
+  background: var(--gray-light-color);
+  padding: 0 10px;
+}
+
+div.price p {
+  color: var(--black-light-color);
+}
+
+div.service_datail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  column-gap: 1px;
+  background: var(--gray-light-color);
+  padding: 1px;
+  margin-top: 20px;
+}
+
+div.service_datail div {
+  display: flex;
+  width: 100%;
+  background: white;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+div.service_datail div img {
+  width: 34px;
+  height: 34px;
+}
+
+div.service_datail div p {
+  color: var(--black-light-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+div.service_datail div p span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+div.pay_project {
+  background: var(--gray-light-color);
+  height: 80px;
+  padding: 20px 0;
+  display: grid;
+  place-items: center;
+}
+
+div.pay_project button {
+  background: var(--orange-color);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 12px #e3690046;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  height: 45px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+div.pay_project button:active {
+  transform: scale(0.98);
+}
+
+div.info_property {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.options_detail {
+  margin: 30px 0;
+}
+
+div.options_detail {
+  display: flex;
+  column-gap: 20px;
+  height: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+div.options_detail div {
+  display: none;
+}
+
+div.options_detail label {
+  background: white;
+  color: var(--gray-color);
+  box-shadow: 0px 3px 30px #0000001a;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div.options_detail input[type="radio"] {
+  display: none;
+}
+
+div.options_detail input[type="radio"]:checked + div {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 40px;
+  box-shadow: 0px 3px 30px #0000001a;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  height: 80%;
+  padding: 20px 40px;
+}
+
+div.options_detail div p {
+  font-size: 14px;
+  color: var(--black-color);
+}
+
+div.options_detail div ul.prices {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+div.options_detail div ul.services {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+}
+
+div.options_detail div ul.services li {
+  display: flex;
+  align-items: center;
+}
+
+div.options_detail div ul.services li p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+div.options_detail div ul.services > p {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+div.options_detail div ul.services > p > span {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+div.options_detail div ul.services li img {
+  width: 50px;
+  height: 50px;
+}
+
+div.options_detail div ul.prices li {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+div.options_detail div ul.prices li p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black-color);
+}
