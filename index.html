@@ -12,7 +12,35 @@
     <title>V&V</title>
   </head>
   <body>
-    <article>
+    <article id="dashboard">
+      <div id="modalGallery" class="modal_gallery">
+        <div class="carrousel">
+          <div class="options">
+            <a href="#">
+              <img src="./assets/icons/compartir_negativo.svg" alt="share" />
+              <span>Compartir</span>
+            </a>
+            <span id="badge">1/10</span>
+            <button onclick="closeGallery()">
+              <img src="./assets/icons/cerrar_negativo.svg" alt="close" />
+              <span>Cerrar</span>
+            </button>
+          </div>
+          <div class="arrows_controls">
+            <button onclick="toLeft()">
+              <img src="./assets/icons/Flecha_positivo.svg" alt="arrow icon" />
+            </button>
+            <button onclick="toRight()">
+              <img src="./assets/icons/Flecha_positivo.svg" alt="arrow icon" />
+            </button>
+          </div>
+          <img
+            id="photoActive"
+            src="./assets/BUONAVISTA_APARTAMENTO_VIVIENDA_CUCUTA_PRADOSNORTE_INVERSION_HOGAR-7.jpeg"
+            alt="active"
+          />
+        </div>
+      </div>
       <section class="gallery_wrapper">
         <div class="photos_property">
           <a href="">
@@ -21,17 +49,45 @@
           </a>
           <div class="gallery">
             <div class="photo_active">
+              <div class="arrow_controls">
+                <button onclick="toLeft()">
+                  <img
+                    src="./assets/icons/Flecha_positivo.svg"
+                    alt="arrow icon"
+                  />
+                </button>
+                <button onclick="toRight()">
+                  <img
+                    src="./assets/icons/Flecha_positivo.svg"
+                    alt="arrow icon"
+                  />
+                </button>
+              </div>
               <label>
                 <img src="./assets/icons/Ubicación.svg" alt="ubication" />
                 <span>EL CUJI - ID:26988</span>
               </label>
-              <img src="./assets/photo1.png" alt="active" />
+              <span id="badge"></span>
+              <img
+                id="photoActive"
+                src="./assets/BUONAVISTA_APARTAMENTO_VIVIENDA_CUCUTA_PRADOSNORTE_INVERSION_HOGAR-7.jpeg"
+                alt="active"
+              />
             </div>
             <div class="list_photos">
-              <img src="./assets/photo1.png" alt="photo_2" />
-              <img src="./assets/photo1.png" alt="photo_3" />
-              <img src="./assets/photo1.png" alt="photo_4" />
-              <button>
+              <img
+                src="./assets/BUONAVISTA_APARTAMENTO_VIVIENDA_CUCUTA_PRADOSNORTE_INVERSION_HOGAR-1.jpeg"
+                alt="photo_2"
+              />
+              <img
+                src="./assets/BUONAVISTA_APARTAMENTO_VIVIENDA_CUCUTA_PRADOSNORTE_INVERSION_HOGAR-8.jpeg"
+                alt="photo_3"
+              />
+              <img
+                src="./assets/BUONAVISTA_APARTAMENTO_VIVIENDA_CUCUTA_PRADOSNORTE_INVERSION_HOGAR-3.jpeg"
+                alt="photo_4"
+              />
+              <button onclick="openGallery()">
                 <span>Mostrar todas las fotos</span>
                 <img src="./assets/icons/Flecha_positivo.svg" alt="ubication" />
               </button>
@@ -315,11 +371,8 @@
         <div class="bank">
           <div>
             <h3>Simula tu crédito</h3>
-            <img
-              src="https://www.bancolombia.com/wps/wcm/connect/0cfc1636-fbb2-4417-8336-4ba2698414a1/logo-grupo-bancolombia.png?MOD=AJPERES&CVID=lSFRPt6"
-              alt="bank logo"
-            />
-            <button>
+            <img src="./assets/bancolombia.png" alt="bank logo" />
+            <button onclick="openSimulator()">
               <span>Simular ahora</span>
               <img
                 src="./assets/icons/flecha_dirección_negativo.svg"
