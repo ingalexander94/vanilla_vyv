@@ -20,13 +20,17 @@
   scroll-behavior: smooth;
 }
 
+.hide {
+  display: none !important;
+}
+
 article {
   padding: 10px;
 }
 
 section.gallery_wrapper {
   display: grid;
-  grid-template-columns: 40vw 1fr;
+  grid-template-columns: 40% 1fr;
   column-gap: 20px;
 }
 
@@ -152,12 +156,6 @@ div.price {
   align-items: flex-end;
 }
 
-/* div.info_property {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-} */
-
 div.header h3 {
   font-weight: bold;
   color: var(--black-color);
@@ -178,7 +176,7 @@ div.name p {
 
 div.price h3 {
   font-size: 20px;
-  background: var(--gray-light-color);
+  background: #ebebeb;
   padding: 0 10px;
 }
 
@@ -223,7 +221,7 @@ div.service_datail div p span {
 }
 
 div.pay_project {
-  background: var(--gray-light-color);
+  background: #f2f2f2;
   height: 80px;
   padding: 20px 0;
   display: grid;
@@ -254,73 +252,177 @@ div.info_property {
   justify-content: space-between;
 }
 
-div.options_detail {
-  margin: 30px 0;
+div.form_pay {
+  background: #f2f2f2;
+  padding: 0 40px;
 }
 
-div.options_detail {
-  display: flex;
-  column-gap: 20px;
-  height: 100%;
-  max-width: 100%;
-  position: relative;
+div.form_pay form > div:nth-child(1) {
+  background: var(--orange-color);
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-div.options_detail div {
-  display: none;
-}
-
-div.options_detail label {
-  background: white;
-  color: var(--gray-color);
-  box-shadow: 0px 3px 30px #0000001a;
+div.form_pay form > div h3 {
+  color: white;
   font-weight: bold;
+}
+
+div.form_pay form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  overflow: hidden;
+  background: white;
+  padding-bottom: 20px;
+  box-shadow: 0px 10px 30px #00000029;
+}
+
+div.form_pay > button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+div.form_pay > button span {
+  color: var(--inactive-gray-color);
+  font-weight: 500;
+}
+
+div.form_pay > button img {
+  height: 34px;
+  width: 34px;
+  transform: rotate(90deg);
+}
+
+div.form_pay form .form_inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+div.form_pay form .form_inputs div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  column-gap: 10px;
+}
+
+div.form_pay form .form_inputs label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+div.form_pay form .form_inputs button {
+  background: var(--orange-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 40px;
-  line-height: 40px;
+  width: 220px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+div.form_pay form .form_inputs button:active {
+  transform: scale(0.98);
+}
+
+div.form_pay form .form_inputs button span {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.form_pay form .form_inputs label span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+div.form_pay form .form_inputs label input {
+  height: 32px;
+  padding: 0 10px;
+}
+
+div.form_pay form .form_inputs label textarea {
+  padding: 10px;
+}
+
+div.form_pay form .form_inputs label input,
+div.form_pay form .form_inputs label textarea {
+  border: none;
+  outline: none;
+  box-shadow: inset 0px 0px 10px #00000048;
+  border: 2px solid #e2e2e2;
+  border-radius: 6px;
+  resize: none;
+}
+
+div.options_detail {
+  margin: 20px 0;
+  height: 100%;
+}
+
+div.options_detail nav {
+  position: relative;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+div.options_detail nav label {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  text-align: center;
   padding: 0 20px;
   cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  position: relative;
+  z-index: 1;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  color: var(--gray-color);
+  background: white;
+  box-shadow: 0px 0px 10px #0000001a;
+  font-weight: bold;
 }
 
 div.options_detail input[type="radio"] {
   display: none;
 }
 
-div.options_detail input[type="radio"]:checked + div {
+div.options_detail div .content {
+  display: none;
   background: white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  width: 100%;
-  margin-top: 40px;
   box-shadow: 0px 3px 30px #0000001a;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
-  height: 80%;
   padding: 20px 40px;
+  height: 250px;
 }
 
-div.options_detail div p {
-  font-size: 14px;
-  color: var(--black-color);
-}
-
-div.options_detail div ul.prices {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-
-div.options_detail div ul.services {
+div.options_detail ul.services {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -328,18 +430,18 @@ div.options_detail div ul.services {
   position: relative;
 }
 
-div.options_detail div ul.services li {
+div.options_detail ul.services li {
   display: flex;
   align-items: center;
 }
 
-div.options_detail div ul.services li p {
+div.options_detail ul.services li p {
   font-size: 12px;
   font-weight: 500;
   color: var(--black-color);
 }
 
-div.options_detail div ul.services > p {
+div.options_detail ul.services > p {
   position: absolute;
   top: 80%;
   left: 0;
@@ -347,24 +449,335 @@ div.options_detail div ul.services > p {
   font-weight: 300;
 }
 
-div.options_detail div ul.services > p > span {
+div.options_detail ul.services > p > span {
   font-weight: 500;
   font-size: 12px;
 }
 
-div.options_detail div ul.services li img {
+div.options_detail ul.services li img {
   width: 50px;
   height: 50px;
 }
 
-div.options_detail div ul.prices li {
+div.options_detail ul.prices {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+div.options_detail ul.prices li {
   display: flex;
   align-items: center;
   column-gap: 20px;
 }
 
-div.options_detail div ul.prices li p {
+div.options_detail ul.prices li p {
   font-size: 14px;
   font-weight: 500;
   color: var(--black-color);
+}
+
+#description:checked ~ nav label.description,
+#details:checked ~ nav label.details,
+#finance:checked ~ nav label.finance {
+  color: var(--orange-color);
+  box-shadow: 0px -10px 20px #0000001a;
+}
+
+#description:checked ~ div .content-3,
+#details:checked ~ div .content-4,
+#finance:checked ~ div .content-5 {
+  display: flex;
+}
+
+section.characteristics_wrapper {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  column-gap: 40px;
+  margin-top: 40px;
+}
+
+div.characteristics_nav nav {
+  position: relative;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+div.characteristics_nav nav label {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  text-align: center;
+  padding: 0 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  color: var(--gray-color);
+  background: white;
+  box-shadow: 0px 0px 10px #0000001a;
+  font-weight: bold;
+}
+
+div.characteristics_nav input[type="radio"] {
+  display: none;
+}
+
+div.characteristics_nav div .content {
+  display: none;
+  background: white;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 3px 30px #0000001a;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  padding: 20px 40px;
+  height: 400px;
+}
+
+#characteristics:checked ~ nav label.characteristics,
+#blueprints:checked ~ nav label.blueprints {
+  color: var(--orange-color);
+  box-shadow: 0px -10px 20px #0000001a;
+}
+
+#characteristics:checked ~ div .content-1,
+#blueprints:checked ~ div .content-2 {
+  display: flex;
+}
+
+.content-1 > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 20px;
+}
+
+.content-1 > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-1 > div > div img {
+  height: 34px;
+  width: 34px;
+}
+
+.content-1 > div > div span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black-color);
+  width: 100px;
+}
+
+div.bank > div {
+  background: white;
+  display: flex;
+  margin-top: 40px;
+  border-radius: 9px;
+  flex-direction: column;
+  align-self: center;
+  height: 320px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 0px 20px #00000029;
+  overflow: hidden;
+}
+
+div.bank > div h3 {
+  background: #9d9d9d;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.bank > div > img {
+  width: 300px;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+div.bank > div button {
+  background: var(--orange-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  padding-right: 10px;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0px 3px 12px #65656545;
+}
+
+div.bank > div button:active {
+  transform: scale(0.98);
+}
+
+div.bank > div button span {
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+}
+
+section.map_wrapper {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+section.map_wrapper h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--black-color);
+}
+
+section.map_wrapper p {
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--black-color);
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+#map .marker {
+  position: absolute;
+  height: 50px;
+  width: 120px;
+  box-shadow: 0px 3px 10px #00000052;
+  border-radius: 6px;
+  background: white;
+  z-index: 1;
+  top: calc(250px / 2);
+  left: calc(calc(100% - 120px) / 2);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  color: var(--black-color);
+  font-weight: bold;
+}
+
+#map .marker::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 10;
+  background: white;
+  bottom: -10px;
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 420px) {
+  article {
+    width: 100vw;
+  }
+
+  section.gallery_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.list_photos {
+    display: none;
+  }
+
+  div.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  section.characteristics_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.service_datail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px;
+  }
+
+  div.options_detail nav {
+    max-width: 90%;
+    column-gap: 10px;
+  }
+
+  div.options_detail nav label {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  div.characteristics_nav nav label {
+    font-size: 12px;
+  }
+
+  div.bank > div {
+    display: none;
+  }
+
+  div.characteristics_nav div .content {
+    padding: 20px 0;
+    height: 500px;
+  }
+
+  .content-1 > div {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+
+  .content-1 > div > div span {
+    width: 120px;
+  }
+
+  div.options_detail div .content {
+    padding: 20px;
+    height: 350px;
+  }
+
+  div.options_detail ul.services {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 50px;
+  }
+
+  div.options_detail ul.services > p {
+    top: 85%;
+  }
+
+  div.price h3 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  div.form_pay {
+    padding: 0 10px;
+  }
+
+  div.form_pay form .form_inputs div {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 10px;
+  }
 }

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <title>V&V</title>
   </head>
@@ -21,24 +25,12 @@
                 <img src="./assets/icons/Ubicación.svg" alt="ubication" />
                 <span>EL CUJI - ID:26988</span>
               </label>
-              <img
-                src="https://d500.epimg.net/cincodias/imagenes/2019/06/04/lifestyle/1559679036_977776_1559679371_noticia_normal.jpg"
-                alt="active"
-              />
+              <img src="./assets/photo1.png" alt="active" />
             </div>
             <div class="list_photos">
-              <img
-                src="https://i0.wp.com/hotbook.mx/wp-content/uploads/2019/01/fotosparis_portada.jpg?fit=1024%2C682&ssl=1"
-                alt="photo_2"
-              />
-              <img
-                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fotos-editar-tiktok-1620329179.jpg?crop=1xw:0.4503335804299481xh;center,top&resize=1200:*"
-                alt="photo_3"
-              />
-              <img
-                src="https://www.dzoom.org.es/wp-content/uploads/2010/08/fotografias-atardecer-sol-7-810x540.jpg"
-                alt="photo_4"
-              />
+              <img src="./assets/photo1.png" alt="photo_2" />
+              <img src="./assets/photo1.png" alt="photo_3" />
+              <img src="./assets/photo1.png" alt="photo_4" />
               <button>
                 <span>Mostrar todas las fotos</span>
                 <img src="./assets/icons/Flecha_positivo.svg" alt="ubication" />
@@ -77,99 +69,278 @@
               </div>
             </div>
           </div>
-          <div class="options_detail">
-            <label for="description">Descripción</label>
+
+          <div class="form_pay hide" id="formPay">
+            <button onclick="showFormPay()">
+              <img src="./assets/icons/Flecha_positivo.svg" alt="arrow" />
+              <span>Volver</span>
+            </button>
+            <form action="">
+              <div>
+                <h3>Quiero comprar este proyecto</h3>
+              </div>
+              <div class="form_inputs">
+                <label for="fullname">
+                  <span>Nombres y apellidos</span>
+                  <input type="text" id="fullname" required />
+                </label>
+                <div>
+                  <label for="phone">
+                    <span>Teléfono</span>
+                    <input type="number" id="phone" required />
+                  </label>
+                  <label for="email">
+                    <span>Correo electrónico</span>
+                    <input type="email" id="email" required />
+                  </label>
+                </div>
+                <label for="message">
+                  <span>Mensaje y/o inquietud</span>
+                  <textarea id="message" rows="3" required></textarea>
+                </label>
+                <button>
+                  <span>Enviar solicitud</span>
+                  <img
+                    src="./assets/icons/flecha_dirección_negativo.svg"
+                    alt="arrow"
+                  />
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="options_detail" id="options">
             <input type="radio" name="option" checked id="description" />
-            <div>
-              <p>
-                La oportunidad de vivir rodeado de todas las comodidades de un
-                sector residencial consolidado; cerca de centros educativos;
-                además a pocos metros del centro comercial Unicentro, uno de los
-                más importantes de la ciudad.
-              </p>
-              <br />
-              <p>
-                Buonavista ubicado en el Sector de Prados Norte cuenta con fácil
-                acceso a las principales vías de la ciudad, conectada con el
-                Aeropuerto Internacional Camilo Daza, el centro de la ciudad,
-                poblaciones del área metropolitana y anillos viales. El
-                condominio está conformado por dos torres de 11 pisos con 110
-                apartamentos y una zona comercial exclusiva, el proyecto se
-                construirán en dos etapas.
-              </p>
-            </div>
-            <label for="detail">Detalles de la propiedad</label>
-            <input type="radio" name="option" id="detail" />
-            <div>
-              <ul class="services">
-                <li>
-                  <img src="./assets/icons/area.svg" alt="check icon" />
-                  <p>Precio de venta: Desde $180 /SMMLV*</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/parqueaderos.svg" alt="check icon" />
-                  <p>Parqueadero: 1</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/Baños.svg" alt="check icon" />
-                  <p>Baños: 2</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/area.svg" alt="check icon" />
-                  <p>Tipo de propiedad: Apartamentos</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/area.svg" alt="check icon" />
-                  <p>Área construida (Desde): 58 m²</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/area.svg" alt="check icon" />
-                  <p>Estado de propiedad: Proyecto</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/area.svg" alt="check icon" />
-                  <p>Área privada (Desde): 50 m²</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/Habitaciones.svg" alt="check icon" />
-                  <p>Habitaciones: 2</p>
-                </li>
-                <p><span>Nota:</span> El área construida es diferente del área privada, consulte con su asesor de ventas. Esta página esta sujeta a actualizaciones y cambios sin previo aviso.</p>
-              </ul>
-            </div>
-            <label for="finance">Financiación</label>
+            <input type="radio" name="option" id="details" />
             <input type="radio" name="option" id="finance" />
+
+            <nav>
+              <label for="description" class="description">Descripción</label>
+              <label for="details" class="details"
+                >Detalles de la propiedad</label
+              >
+              <label for="finance" class="finance">Financiación</label>
+            </nav>
+
             <div>
-              <ul class="prices">
-                <li>
-                  <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
-                  <p>Separa con el: 3% del valor del inmueble</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
+              <div class="content content-3">
+                <p>
+                  La oportunidad de vivir rodeado de todas las comodidades de un
+                  sector residencial consolidado; cerca de centros educativos;
+                  además a pocos metros del centro comercial Unicentro, uno de
+                  los más importantes de la ciudad.
+                </p>
+                <br />
+                <p>
+                  Buonavista ubicado en el Sector de Prados Norte cuenta con
+                  fácil acceso a las principales vías de la ciudad, conectada
+                  con el Aeropuerto Internacional Camilo Daza, el centro de la
+                  ciudad, poblaciones del área metropolitana y anillos viales.
+                  El condominio está conformado por dos torres de 11 pisos con
+                  110 apartamentos y una zona comercial exclusiva, el proyecto
+                  se construirán en dos etapas.
+                </p>
+              </div>
+              <div class="content content-4">
+                <ul class="services">
+                  <li>
+                    <img src="./assets/icons/area.svg" alt="check icon" />
+                    <p>Precio de venta: Desde $180 /SMMLV*</p>
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/icons/parqueaderos.svg"
+                      alt="check icon"
+                    />
+                    <p>Parqueadero: 1</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/Baños.svg" alt="check icon" />
+                    <p>Baños: 2</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/area.svg" alt="check icon" />
+                    <p>Tipo de propiedad: Apartamentos</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/area.svg" alt="check icon" />
+                    <p>Área construida (Desde): 58 m²</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/area.svg" alt="check icon" />
+                    <p>Estado de propiedad: Proyecto</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/area.svg" alt="check icon" />
+                    <p>Área privada (Desde): 50 m²</p>
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/icons/Habitaciones.svg"
+                      alt="check icon"
+                    />
+                    <p>Habitaciones: 2</p>
+                  </li>
                   <p>
-                    Porcentaje de cuota inicial: 27% del valor del apartamento
+                    <span>Nota:</span> El área construida es diferente del área
+                    privada, consulte con su asesor de ventas. Esta página esta
+                    sujeta a actualizaciones y cambios sin previo aviso.
                   </p>
-                </li>
-                <li>
-                  <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
-                  <p>Financiación de hasta el: 70%</p>
-                </li>
-                <li>
-                  <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
-                  <p>Tiempo de financiación de hasta: 34 cuotas</p>
-                </li>
-              </ul>
+                </ul>
+              </div>
+              <div class="content content-5">
+                <ul class="prices">
+                  <li>
+                    <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
+                    <p>Separa con el: 3% del valor del inmueble</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
+                    <p>
+                      Porcentaje de cuota inicial: 27% del valor del apartamento
+                    </p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
+                    <p>Financiación de hasta el: 70%</p>
+                  </li>
+                  <li>
+                    <img src="./assets/icons/Ok_activo.svg" alt="check icon" />
+                    <p>Tiempo de financiación de hasta: 34 cuotas</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="pay_project">
-            <button>Quiero comprar este proyecto</button>
+
+          <div class="pay_project" id="payProject">
+            <button onclick="showFormPay()" id="buttonPay">
+              Quiero comprar este proyecto
+            </button>
           </div>
         </div>
       </section>
-      <section>Siguee</section>
+      <section class="characteristics_wrapper">
+        <div class="characteristics_nav">
+          <input type="radio" name="slider" checked id="characteristics" />
+          <input type="radio" name="slider" id="blueprints" />
+
+          <nav>
+            <label for="characteristics" class="characteristics"
+              >Características</label
+            >
+            <label for="blueprints" class="blueprints">Planos de planta</label>
+          </nav>
+
+          <div>
+            <div class="content content-1">
+              <div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Ascensor</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Piscina para adultos</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Senderos peatonales</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Juegos Infantiles</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Salón Social</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Zonas verdes</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Parqueadero visitantes</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Zona Deportiva</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Gimnasio</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Salón de juegos de mesa</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>BBQ</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Parqueadero de Bicicletas</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Balcón</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Parque Biosaludable</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Shut de basura</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Lobby de recepción</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Piscina para niños</span>
+                </div>
+                <div>
+                  <img src="./assets/icons/Baños.svg" alt="icon" />
+                  <span>Portería Vigiladas</span>
+                </div>
+              </div>
+            </div>
+            <div class="content content-2"></div>
+          </div>
+        </div>
+        <div class="bank">
+          <div>
+            <h3>Simula tu crédito</h3>
+            <img
+              src="https://www.bancolombia.com/wps/wcm/connect/0cfc1636-fbb2-4417-8336-4ba2698414a1/logo-grupo-bancolombia.png?MOD=AJPERES&CVID=lSFRPt6"
+              alt="bank logo"
+            />
+            <button>
+              <span>Simular ahora</span>
+              <img
+                src="./assets/icons/flecha_dirección_negativo.svg"
+                alt="arrow icon"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="map_wrapper">
+        <h3>¿Donde está localizado este inmueble?</h3>
+        <p>
+          Conoce aquí información relevante que te ayudará a tomar tu decisión
+        </p>
+        <div id="map">
+          <div class="marker">Buonavista</div>
+        </div>
+      </section>
     </article>
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
