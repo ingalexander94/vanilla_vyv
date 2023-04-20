@@ -53,3 +53,13 @@ const closeGallery = () => {
   dashboard.classList.remove("no-scroll");
   modalGallery.style.display = "none";
 };
+
+const listPhotos = document.querySelectorAll(".list_photos > img");
+listPhotos.forEach((photo, i) =>
+  photo.addEventListener("click", () => {
+    index = i + 1;
+    photoActive[0].src = `./assets/${PHOTOS[index]}`;
+    badge[0].innerText = `${index + 1} / ${PHOTOS.length}`;
+    openGallery();
+  })
+);

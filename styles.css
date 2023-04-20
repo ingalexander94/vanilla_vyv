@@ -101,6 +101,10 @@ div.list_photos {
   position: relative;
 }
 
+div.list_photos > img {
+  cursor: pointer;
+}
+
 div.list_photos button {
   display: flex;
   justify-content: center;
