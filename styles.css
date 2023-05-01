@@ -810,6 +810,110 @@ div.modal_gallery .carrousel .option button {
   position: absolute;
 }
 
+.accordion {
+  background: white;
+  box-shadow: 0px 0px 30px #00000029;
+  border-radius: 13px;
+  max-width: 750px;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.accordion .item {
+  border: 2px solid var(--gray-light-color);
+  border-radius: 8px;
+  height: fit-content !important;
+  margin: 17px 0;
+}
+
+.accordion .item label {
+  background: var(--gray-light-color);
+  display: block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black-color);
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion .item label::before {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background-image: url("./assets/icons/Flecha_positivo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 10px;
+  top: 0;
+  transition: all.5s;
+}
+
+.accordion .item div {
+  color: black;
+  max-height: 0;
+  overflow: auto;
+  transition: all ease 0.5s;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.accordion .item div::-webkit-scrollbar {
+  display: none;
+}
+
+.accordion .item div h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black-color);
+  padding: 10px 20px;
+  width: 250px;
+  background: #f2f2f2;
+}
+
+.accordion .item div ul {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  list-style: none;
+  margin-top: 15px;
+  max-width: 100%;
+}
+
+.accordion .item div ul li {
+  height: 40px;
+  width: 90px;
+  text-align: center;
+  border: 1px solid var(--gray-light-color);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.accordion .item div img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.accordion input[type="checkbox"] {
+  display: none;
+}
+
+.accordion input[type="checkbox"]:checked ~ div {
+  max-height: 100vh;
+  padding: 20px;
+}
+
+.accordion input[type="checkbox"]:checked ~ label::before {
+  transform: rotate(-180deg);
+  transition: transform 0.5s;
+}
+
 @media only screen and (max-width: 420px) {
   article {
     width: 100vw;
